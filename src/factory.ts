@@ -1,5 +1,5 @@
 /* */
-import ts from 'typescript';
+import * as ts from 'typescript';
 import Logger from './logger';
 import { parseConfig, CombinedOptions } from './parse-config';
 import { CompilerHost } from './compiler-host';
@@ -20,7 +20,10 @@ export interface FactoryOutput {
 }
 
 export async function createFactory(
-	sjsconfig: PluginOptions = {},
+	sjsconfig: PluginOptions = {
+		jsx: 'react',
+		module: 'system'
+	},
 	builder: boolean,
 	_resolve: ResolveFunction,
 	_fetchJson: FetchJsonFunction,

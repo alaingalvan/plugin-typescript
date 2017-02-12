@@ -1,5 +1,5 @@
 /* */
-import ts from "typescript";
+import * as ts from "typescript";
 
 export function isAbsolute(filename: string) {
 	return (filename[0] === '/');
